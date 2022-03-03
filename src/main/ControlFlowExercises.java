@@ -48,27 +48,50 @@ public class ControlFlowExercises {
 //        }
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Please enter an int: ");
-        int userInput = scanner.nextInt();
-        System.out.println("Here is your table");
-        System.out.println("number | squared | cubed");
-        System.out.println("------ | ------- | -----");
-        for (int i = 1; i <= userInput; i++) {
-            System.out.printf("%-6d | %-7.0f | %-5.0f\n", i, Math.pow(i, 2), Math.pow(i, 3));
-        }
 
-        System.out.print("Enter grade: ");
-        double grade = scanner.nextDouble();
-        if (grade >= 88) {
-            System.out.println("A: 100-88");
-        } else if (grade >= 80) {
-            System.out.println("B: 87-80");
-        } else if (grade >= 67) {
-            System.out.println("C: 79-67");
-        } else if (grade >= 60) {
-            System.out.println("D: 66-60");
-        } else {
-            System.out.println("F: 59-0");
-        }
+        boolean repeatTable = true;
+        do {
+            System.out.print("Please enter an int: ");
+            int userInput = scanner.nextInt();
+            System.out.println("Here is your table");
+            System.out.println("number | squared | cubed");
+            System.out.println("------ | ------- | -----");
+            for (int i = 1; i <= userInput; i++) {
+                System.out.printf("%-6d | %-7.0f | %-5.0f\n", i, Math.pow(i, 2), Math.pow(i, 3));
+            }
+            System.out.println();
+            scanner.nextLine();
+
+            System.out.println("Make another table? (y/n)");
+            String response = scanner.nextLine();
+            if (!response.equalsIgnoreCase("y")) {
+                repeatTable = false;
+            }
+        } while (repeatTable);
+
+        boolean repeatGrades = true;
+        do {
+            System.out.print("Enter grade: ");
+            double grade = scanner.nextDouble();
+            if (grade >= 88) {
+                System.out.println("A: 100-88");
+            } else if (grade >= 80) {
+                System.out.println("B: 87-80");
+            } else if (grade >= 67) {
+                System.out.println("C: 79-67");
+            } else if (grade >= 60) {
+                System.out.println("D: 66-60");
+            } else {
+                System.out.println("F: 59-0");
+            }
+            System.out.println();
+            scanner.nextLine();
+
+            System.out.println("Check another grade? (y/n)");
+            String response = scanner.nextLine();
+            if (!response.equalsIgnoreCase("y")) {
+                repeatGrades = false;
+            }
+        } while (repeatGrades);
     }
 }
