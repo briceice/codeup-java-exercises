@@ -10,8 +10,10 @@ public class MethodsExercises {
 //        System.out.println(divide(10,2));
 //        System.out.println(modulus(10,3));
 //        System.out.println(multiplyWithoutSign(5,10));
-//        getInteger(1,10);
-//        getFactorial();
+        getInteger(1,10);
+        getFactorial();
+//        System.out.println(getFib(8));
+        rollDice();
 
     }
 
@@ -81,5 +83,43 @@ public class MethodsExercises {
             return factorial;
         }
         return getFactorial();
+    }
+
+//    public static long getFib(int num){
+//        if(num == 0){
+//            return 0;
+//        }
+//        if(num == 1){
+//            return 1;
+//        }
+//        return getFib(num-1) + getFib(num-2);
+//    }
+
+    public static void rollDice(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("How many sides to a die? ");
+        int sides = scanner.nextInt();
+        scanner.nextLine();
+        System.out.print("Roll dice? (y/n) ");
+        String confirm = scanner.nextLine().trim();
+        if (!confirm.equalsIgnoreCase("y")) {
+            return;
+        }
+        boolean repeat = true;
+        do {
+            dice(sides);
+            scanner.nextLine();
+            System.out.print("Roll again? (y/n) ");
+            String checkRepeat = scanner.nextLine();
+            if(!checkRepeat.equalsIgnoreCase("y")){
+                repeat = false;
+            }
+        } while (repeat);
+    }
+
+    public static void dice(int n){
+        int die1 = (int) (java.lang.Math.random()*n + 1);
+        int die2 = (int) (java.lang.Math.random()*n + 1);
+        System.out.printf("You rolled %d and %d. (hit enter to continue)", die1, die2);
     }
 }
