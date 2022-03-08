@@ -1,8 +1,8 @@
 package main.shapes;
 
 public class Rectangle {
-    private int length;
-    private int width;
+    protected int length;
+    protected int width;
 
     public Rectangle(int length, int width) {
         this.length = length;
@@ -10,10 +10,12 @@ public class Rectangle {
     }
 
     public int getArea(){
+        System.out.println("rect getArea");
         return length * width;
     }
 
     public int getPerimeter(){
+        System.out.println("rect getPerim");
         return 2 * length + 2 * width;
     }
 
