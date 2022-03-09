@@ -1,22 +1,29 @@
 package main.shapes;
 
-public class Square extends Rectangle{
-    protected int side;
-
-    public Square(int side) {
+public class Square extends Quadrilateral{
+    public Square(double side) {
         super(side, side);
-        this.side = side;
     }
 
     @Override
-    public int getArea() {
-        System.out.println("sqr getArea");
-        return side * side;
+    public double getPerimeter() {
+        return length * 2 + width * 2;
     }
 
     @Override
-    public int getPerimeter() {
-        System.out.println("sqr getPerim");
-        return 4 * side;
+    public double getArea() {
+        return length * width;
+    }
+
+    @Override
+    public void setLength(double length) {
+        this.length = length;
+        this.width = length;
+    }
+
+    @Override
+    public void setWidth(double width) {
+        this.length = width;
+        this.width = width;
     }
 }
