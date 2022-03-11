@@ -7,6 +7,7 @@ import java.util.Objects;
 public class MoviesApplication {
     public static void main(String[] args) {
         Input input = new Input();
+        Movie [] movies = MoviesArray.findAll();
         do {
             int userInput = input.getInt("What would you like to do?\n" +
                     "\n" +
@@ -22,44 +23,44 @@ public class MoviesApplication {
                 break;
             }
             if (userInput == 1){
-                for (int i = 0; i < MoviesArray.findAll().length; i++) {
-                    System.out.println(MoviesArray.findAll()[i].getName() + " -- "
-                            + MoviesArray.findAll()[i].getCategory());
+                for (int i = 0; i < movies.length; i++) {
+                    System.out.println(movies[i].getName() + " -- "
+                            + movies[i].getCategory());
                 }
                 System.out.println();
             }
             if (userInput == 2){
-                for (int i = 0; i < MoviesArray.findAll().length; i++) {
-                    if (Objects.equals(MoviesArray.findAll()[i].getCategory(), "animated")){
-                        System.out.println(MoviesArray.findAll()[i].getName() + " -- "
-                                + MoviesArray.findAll()[i].getCategory());
+                for (int i = 0; i < movies.length; i++) {
+                    if (Objects.equals(movies[i].getCategory(), "animated")){
+                        System.out.println(movies[i].getName() + " -- "
+                                + movies[i].getCategory());
                     }
                 }
                 System.out.println();
             }
             if (userInput == 3){
-                for (int i = 0; i < MoviesArray.findAll().length; i++) {
-                    if (Objects.equals(MoviesArray.findAll()[i].getCategory(), "drama")){
-                        System.out.println(MoviesArray.findAll()[i].getName() + " -- "
-                                + MoviesArray.findAll()[i].getCategory());
+                for (int i = 0; i < movies.length; i++) {
+                    if (Objects.equals(movies[i].getCategory(), "drama")){
+                        System.out.println(movies[i].getName() + " -- "
+                                + movies[i].getCategory());
                     }
                 }
                 System.out.println();
             }
             if (userInput == 4){
-                for (int i = 0; i < MoviesArray.findAll().length; i++) {
-                    if (Objects.equals(MoviesArray.findAll()[i].getCategory(), "horror")){
-                        System.out.println(MoviesArray.findAll()[i].getName() + " -- "
-                                + MoviesArray.findAll()[i].getCategory());
+                for (int i = 0; i < movies.length; i++) {
+                    if (Objects.equals(movies[i].getCategory(), "horror")){
+                        System.out.println(movies[i].getName() + " -- "
+                                + movies[i].getCategory());
                     }
                 }
                 System.out.println();
             }
             if (userInput == 5){
-                for (int i = 0; i < MoviesArray.findAll().length; i++) {
-                    if (Objects.equals(MoviesArray.findAll()[i].getCategory(), "scifi")){
-                        System.out.println(MoviesArray.findAll()[i].getName() + " -- "
-                                + MoviesArray.findAll()[i].getCategory());
+                for (int i = 0; i < movies.length; i++) {
+                    if (Objects.equals(movies[i].getCategory(), "scifi")){
+                        System.out.println(movies[i].getName() + " -- "
+                                + movies[i].getCategory());
                     }
                 }
                 System.out.println();

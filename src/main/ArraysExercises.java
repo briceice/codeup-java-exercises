@@ -23,9 +23,7 @@ public class ArraysExercises {
 
     public static Person[] addPerson(Person[] oldArray, Person newPerson){
         Person[] newArray = new Person[oldArray.length + 1];
-        for (int i = 0; i < oldArray.length; i++) {
-            newArray[i] = oldArray[i];
-        }
+        System.arraycopy(oldArray, 0, newArray, 0, oldArray.length);
         newArray[newArray.length - 1] = newPerson;
         return newArray;
     }
