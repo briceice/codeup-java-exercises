@@ -13,14 +13,26 @@ public class GradesApplication {
         Ben.addGrade(99);
         Ben.addGrade(95);
         Ben.addGrade(92);
+        Ben.recordAttendance("1-1-2022", "P");
+        Ben.recordAttendance("1-2-2022", "A");
+        Ben.recordAttendance("1-3-2022", "P");
+        Ben.recordAttendance("1-4-2022", "P");
         Student Max = new Student("Max");
         Max.addGrade(85);
         Max.addGrade(95);
         Max.addGrade(82);
+        Max.recordAttendance("1-1-2022", "P");
+        Max.recordAttendance("1-2-2022", "P");
+        Max.recordAttendance("1-3-2022", "P");
+        Max.recordAttendance("1-4-2022", "P");
         Student Joe = new Student("Joe");
         Joe.addGrade(80);
         Joe.addGrade(80);
         Joe.addGrade(90);
+        Joe.recordAttendance("1-1-2022", "P");
+        Joe.recordAttendance("1-2-2022", "A");
+        Joe.recordAttendance("1-3-2022", "A");
+        Joe.recordAttendance("1-4-2022", "P");
         students.put("TheBucket", Ben);
         students.put("Gitter", Max);
         students.put("JDirt", Joe);
@@ -63,6 +75,7 @@ public class GradesApplication {
         System.out.printf("Name: %s - GitHub Username: %s\n" +
                 "Current Average: %.2f\n", studentName, gitUsername, studentAverage);
         System.out.println("Current Grades: " + hashMap.get(gitUsername).getGrades());
+        System.out.printf("Attendance: %.2f\n",hashMap.get(gitUsername).getAttendance());
     }
 
     private static void displayAllStudentInfo(HashMap<String, Student> hashMap){
