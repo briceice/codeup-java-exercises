@@ -3,7 +3,7 @@ package main.util;
 import java.util.Scanner;
 
 public class Input {
-    private Scanner scanner;
+    private final Scanner scanner;
 
     // Constructor
     public Input() {
@@ -28,13 +28,14 @@ public class Input {
 
     public int getInt(String prompt, int min, int max){
         do {
-            System.out.println(prompt);
-            if (!this.scanner.hasNextInt()){
-                this.scanner.nextLine();
+            String s = getString(prompt);
+            int userInt;
+            try {
+                userInt = Integer.parseInt(s);
+            } catch (NumberFormatException e) {
+                System.out.println("Error: enter an int");
                 continue;
             }
-            int userInt = this.scanner.nextInt();
-            this.scanner.nextLine();
             if (userInt >= min && userInt <= max){
                 return userInt;
             }
@@ -43,42 +44,45 @@ public class Input {
 
     public int getInt(String prompt){
         do {
-            System.out.println(prompt);
-            if (!this.scanner.hasNextInt()){
-                this.scanner.nextLine();
+            String s = getString(prompt);
+            int userInt;
+            try {
+                userInt = Integer.parseInt(s);
+            } catch (NumberFormatException e) {
+                System.out.println("Error: enter an int");
                 continue;
             }
-            int userInt = this.scanner.nextInt();
-            this.scanner.nextLine();
             return userInt;
         } while (true);
     }
 
     public double getDouble(String prompt, double min, double max){
         do {
-            System.out.println(prompt);
-            if (!this.scanner.hasNextDouble()){
-                this.scanner.nextLine();
+            String s = getString(prompt);
+            double userDbl;
+            try {
+                userDbl = Double.parseDouble(s);
+            } catch (NumberFormatException e) {
+                System.out.println("Error: enter a double");
                 continue;
             }
-            double userDouble = this.scanner.nextDouble();
-            this.scanner.nextLine();
-            if (userDouble >= min && userDouble <= max){
-                return userDouble;
+            if (userDbl >= min && userDbl <= max){
+                return userDbl;
             }
         } while (true);
     }
 
-    public double getDouble(String prompt){
+    public double getDouble(String prompt) {
         do {
-            System.out.println(prompt);
-            if (!this.scanner.hasNextDouble()){
-                this.scanner.nextLine();
+            String s = getString(prompt);
+            double userDbl;
+            try {
+                userDbl = Double.parseDouble(s);
+            } catch (NumberFormatException e) {
+                System.out.println("Error: enter a double");
                 continue;
             }
-            double userDouble = this.scanner.nextDouble();
-            this.scanner.nextLine();
-            return userDouble;
+            return userDbl;
         } while (true);
     }
 }
